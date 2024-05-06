@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog details post {% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{ blog.title }}</h4>
+        </div>
+        <div class="card-body">
+            <p>Posted On: {{ blog.created_at }}</p>
+            <p>{{ blog.content }}</p>
+            {% if blog.image %}
+                <img class="w-100" src="{{ blog.image.url }}" alt="">
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
